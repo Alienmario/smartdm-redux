@@ -1,0 +1,134 @@
+"Games"
+{
+	"#default"
+	{
+		"Keys"
+		{
+			"VMaterialSystem"
+			{
+				"windows"	"VMaterialSystem080"
+				"linux"		"VMaterialSystem080"
+			}
+		}
+		"Signatures"
+		{
+			"CreateMatSysIface"
+			{
+				"library"		"materialsystem"
+				"windows"		"@CreateInterface"
+				"linux"			"@CreateInterface"
+			}
+		}
+		"Offsets"
+		{
+			// int CMaterialSystem::GetShaders( int nFirstShader, int nMaxCount, IShader **ppShaderList )
+			"CMaterialSystem::GetShaders"
+			{
+				"windows"	"51"
+				"linux"		"51"
+			}
+			// char const* IShader::GetName( )
+			"IShader::GetName"
+			{
+				"windows"	"0"
+				"linux"		"0"
+			}
+			// char const* IShader::GetFallbackShader( IMaterialVar** params ) 
+			"IShader::GetFallbackShader"
+			{
+				"windows"	"1"
+				"linux"		"1"
+			}
+			// int IShader::GetNumParams( )
+			"IShader::GetNumParams"
+			{
+				"windows"	"2"
+				"linux"		"2"
+			}
+			// char const* IShader::GetParamName( int paramIndex )
+			"IShader::GetParamName"
+			{
+				"windows"	"6"
+				"linux"		"6"
+			}
+			// ShaderParamType_t IShader::GetParamType( int paramIndex )
+			"IShader::GetParamType"
+			{
+				"windows"	"8"
+				"linux"		"8"
+			}
+
+			// studiohdr_t (mdl) offsets
+
+			"studiohdr_t::numtextures"
+			{
+				"windows"  "204"
+				"linux"    "204"
+			}
+			"studiohdr_t::textureindex"
+			{
+				"windows"  "208"
+				"linux"    "208"
+			}
+			"mstudiotexture_t::sznameindex"
+			{
+				"windows"	"0"
+				"linux"     "0"
+			}
+			"sizeof(mstudiotexture_t)"
+			{
+				"windows"	"64"
+				"linux"     "64"
+			}
+			"studiohdr_t::numcdtextures"
+			{
+				"windows"  "212"
+				"linux"    "212"
+			}
+			"studiohdr_t::cdtextureindex"
+			{
+				"windows"  "216"
+				"linux"    "216"
+			}
+			"studiohdr_t::numincludemodels"
+			{
+				"windows"  "336"
+				"linux"    "336"
+			}
+			"studiohdr_t::includemodelindex"
+			{
+				"windows"  "340"
+				"linux"    "340"
+			}
+			"mstudiomodelgroup_t::sznameindex"
+			{
+				"windows"  "4"
+				"linux"    "4"
+			}
+			"sizeof(mstudiomodelgroup_t)"
+			{
+				"windows"  "8"
+				"linux"    "8"
+			}
+		}
+	}
+	"bms"
+	{
+		"Keys"
+		{
+			"VMaterialSystem"
+			{
+				"windows"	"VMaterialSystem081"
+				"linux"		"VMaterialSystem081"
+			}
+		}
+		"Offsets"
+		{
+			"CMaterialSystem::GetShaders"
+			{
+				"windows"	"54"
+				"linux"		"54"
+			}
+		}
+	}
+}
