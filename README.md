@@ -23,3 +23,6 @@ game+mod+smartdm			hl2mp/custom/*
 Requirements:
  - Min SourceMod version: 1.12 - build 6963 (older builds possible if shader cache already exists)
 ```
+Currently supported games, with shader cache and gamedata included:
+- HL2:DM
+- Black Mesa
