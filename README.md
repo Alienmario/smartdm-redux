@@ -8,6 +8,8 @@ This is a full rewrite by Alienmario of the original SmartDM by Zephyrus.
 SmartDM.Add(...) is the main entry point and likely all you'll need.
 To enable debugging, add "#define SMARTDM_DEBUG" before this include.
 Useful debug command: dumpstringtables
+Note that all filenames will be turned lowercase before adding to downloads table.
+You should always keep all your custom content lower-cased to avoid issues (esp. with linux clients)
 
 Usually linux servers will not ship with shaders,
 prohibiting automatic detection of shader parameters needed to resolve .vmt material files.

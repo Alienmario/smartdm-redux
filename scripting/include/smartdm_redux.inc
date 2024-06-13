@@ -12,6 +12,8 @@
 // SmartDM.Add(...) is the main entry point and likely all you'll need.
 // To enable debugging, add "#define SMARTDM_DEBUG" before this include.
 // Useful debug command: dumpstringtables
+// Note that all filenames will be turned lowercase before adding to downloads table.
+// You should always keep all your custom content lower-cased to avoid issues (esp. with linux clients)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Usually linux servers will not ship with shaders, prohibiting automatic detection
 // of shader parameters needed to resolve .vmt material files.
@@ -395,7 +397,7 @@ methodmap SmartDM
 				int numParams = SDKCall(Call_GetNumParams, shader);
 				for (int j = 0; j < numParams; j++)
 				{
-					ShaderParamType_t pType = SDKCall(Call_GetParamType, shader, j);
+					SmartDM_ShaderParamType_t pType = SDKCall(Call_GetParamType, shader, j);
 					if (pType == SHADER_PARAM_TYPE_TEXTURE)
 					{
 						SDKCall(Call_GetParamName, shader, param, sizeof(param), j);	
@@ -616,7 +618,7 @@ enum SmartDM_FileType
 	SDM_FileType_Sound
 }
 
-enum ShaderParamType_t 
+enum SmartDM_ShaderParamType_t 
 {
 	SHADER_PARAM_TYPE_TEXTURE, 
 	SHADER_PARAM_TYPE_INTEGER,
