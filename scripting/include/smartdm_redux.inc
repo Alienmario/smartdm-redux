@@ -62,20 +62,21 @@ int SmartDM_Offs_sizeof_mstudiomodelgroup_t;
 methodmap SmartDM
 {
 	/**
-	 * Main entry point.
+	 * Simplest approach - Substitute for AddFileToDownloadsTable and precache functions.
 	 */
 	public static int Add(const char[] file, bool precache = false, bool preload = true)
 	{
 		SmartDM_FileSet files = new SmartDM_FileSet();
 		SmartDM.AddEx(file, files, precache, preload);
 		int numFiles = files.Size;
+		files.AddToDownloadsTable();
 		files.Close();
 		return numFiles;
 	}
 	
-	/** Alternative method with SmartDM_FileSet already provided.
-	 * Can be used for caching downloads and then calling SmartDM_FileSet.AddToDownloadsTable
-	 * on subsequent map changes.
+	/** Alternative method for adding to the provided SmartDM_FileSet.
+	 * Can be used for caching downloads and then calling SmartDM_FileSet.AddToDownloadsTable when needed.
+	 * This has another advantage being that the files already in fileset won't need to be resolved for dependencies again.
 	 */
 	public static void AddEx(const char[] file, SmartDM_FileSet results, bool precache = false, bool preload = true)
 	{
@@ -99,7 +100,6 @@ methodmap SmartDM
 				}
 			}
 		}
-		results.AddToDownloadsTable();
 	}
 
 	public static SmartDM_FileType ResolveFile(const char[] file, SmartDM_FileSet results)
