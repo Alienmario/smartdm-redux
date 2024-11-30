@@ -6,8 +6,8 @@
 		{
 			"VMaterialSystem"
 			{
-				"windows"	"VMaterialSystem080"
-				"linux"		"VMaterialSystem080"
+				"windows"	"VMaterialSystem081"
+				"linux"		"VMaterialSystem081"
 			}
 		}
 		"Signatures"
